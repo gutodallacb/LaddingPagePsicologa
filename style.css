@@ -1,0 +1,470 @@
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   VARIÁVEIS
+===================== */
+:root {
+  --terracota: #893f0a;
+  --offwhite: #f3ede9;
+  --verde: #5d644f;
+  --dark: #2b2b2b;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--offwhite);
+  color: var(--dark);
+  line-height: 1.8;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =====================
+   HEADER – CORRIGIDO E PROFISSIONAL
+===================== */
+.header {
+  background: var(--offwhite);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 24px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: center; /* centraliza tudo */
+  align-items: center;
+  gap: 60px; /* espaço entre logo e menu */
+  flex-wrap: wrap; /* evita corte */
+}
+
+/* LOGO */
+.logo {
+  max-height: 80px; /* NUNCA corta */
+  width: auto;
+  display: block;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--verde);
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* EFEITO HOVER */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--terracota);
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--terracota);
+}
+
+.nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  height: 100vh;
+  background-image: url("imagens/_DSC6602.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.25) 70%,
+    rgba(243, 237, 233, 0.6) 85%,
+    rgba(243, 237, 233, 1) 100%
+  );
+}
+
+.hero-text {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 22px;
+}
+
+.hero-text span {
+  display: block;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* ANIMAÇÃO HERO */
+.hero-text h1,
+.hero-text p,
+.hero-text span {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-text p {
+  animation-delay: 0.4s;
+}
+
+.hero-text span {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   SOBRE
+===================== */
+.sobre {
+  background: linear-gradient(41deg, #ffffff 0%, #f3ede9 45%, #745035 100%);
+  padding: 120px 0;
+}
+
+.sobre-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* FOTO SOBRE MIM — RETRATO */
+.sobre-img {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(93, 100, 79, 0.3);
+}
+
+.sobre-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.sobre-text h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--terracota);
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+/* =====================
+   SERVIÇOS
+===================== */
+.servicos {
+  padding: 100px;
+}
+
+.servicos h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 40px;
+}
+
+.servico {
+  background: #fff;
+  border: 1px solid var(--verde);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.servico:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.servico-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.servico-header h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.toggle {
+  background: none;
+  border: 1px solid var(--verde);
+  color: var(--verde);
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.servico.active .toggle {
+  transform: rotate(45deg);
+}
+
+.servico-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease;
+}
+
+.servico.active .servico-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.servico-content p {
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+/* =====================
+   CONTATO
+===================== */
+.contato {
+  padding: 90px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--terracota);
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+}
+
+/* =====================
+   MAPA
+===================== */
+.mapa {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.mapa-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
+}
+
+.mapa-box {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* =====================
+   WHATSAPP
+===================== */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo {
+    max-height: 70px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  /* SOBRE MOBILE — FOTO AO LADO */
+  .sobre {
+    padding: 80px 0;
+  }
+
+  .sobre-inner {
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .sobre-img {
+    aspect-ratio: 3 / 4;
+    border-radius: 18px;
+  }
+
+  .sobre-text h2 {
+    font-size: 26px;
+  }
+
+  .sobre-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .servicos {
+    padding: 60px 20px;
+  }
+
+  .contato {
+    padding: 60px 20px;
+  }
+
+  .mapa {
+    padding: 60px 0;
+  }
+
+  .mapa-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa iframe {
+    height: 300px;
+  }
+
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* SOBRE – MOBILE */
+  .sobre-inner {
+    display: flex;
+    flex-direction: column; /* empilha */
+    gap: 32px;
+  }
+
+  /* TEXTO PRIMEIRO */
+  .sobre-text {
+    order: 1;
+  }
+
+  /* FOTO EMBAIXO */
+  .sobre-img {
+    order: 2;
+    max-width: 260px; /* controla tamanho da foto */
+    margin: 0 auto; /* centraliza */
+  }
+}
