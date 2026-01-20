@@ -1,19 +1,3 @@
-# Landing Page Infinitamente
+Este projeto consiste no desenvolvimento de um site institucional responsivo para a psicóloga Paula Dalla Costa, com foco em acolhimento, profissionalismo e estética editorial, refletindo os valores da Psicologia Clínica, Psicologia Perinatal, maternidade e cuidado emocional.
 
-# Sobre o projeto
-
-https://clinica-psicologia.netlify.app/
-
-Nesse projeto eu peguei um trabaho a minha faculdade, que era criar uma Landing Page sobre uma clinica de psicologia, e aproveitei para 
-integra-la com um banco de dados.
-
-# Tecnologias utilizadas
-## Back end
-- PHP
-  
-## Front end
-- HTML / CSS / JS
-  
-  ## Implantação
-- Front end: Netlify
-- Banco de dados: MySQL
+O site foi desenvolvido com HTML, CSS e JavaScript puro, priorizando performance, acessibilidade e uma experiência visual suave tanto no desktop quanto no mobile.
