@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -16,21 +16,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <a
-    href="https://wa.me/5554981125067"
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="Falar no WhatsApp"
-  >
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-      alt="WhatsApp icon"
-      width="48"
-      height="48"
-    />
-  </a>
-
   <body>
+    <a
+      href="https://wa.me/5554981125067"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Falar no WhatsApp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp icon"
+        width="48"
+        height="48"
+      />
+    </a>
     <!-- HEADER -->
     <header class="header">
       <div class="container header-inner">
@@ -44,25 +43,35 @@
           <a href="#home">Início</a>
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Serviços</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#faq">Dúvidas</a>
           <a href="#contato">Contato</a>
         </nav>
       </div>
     </header>
 
-    <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-overlay"></div>
 
       <div class="hero-text">
-        <h1>na arte da escuta</h1>
-        <p>
+        <header class="hero-header">
+          <h1 class="hero-name">Paula Dalla Costa Siqueira</h1>
+          <span class="hero-role"
+            >Psicóloga Clínica (CRP 07/32632) & Doula</span
+          >
+        </header>
+
+        <h1 class="hero-title">na arte da escuta</h1>
+
+        <p class="hero-poem">
           desbravo o outro<br />
           e acolho histórias<br />
           desnudo meu julgar<br />
           para te encontrar<br />
           inteira
         </p>
-        <span>vamos juntas?</span>
+
+        <span class="hero-cta">vamos juntas?</span>
       </div>
     </section>
 
@@ -75,102 +84,366 @@
 
         <div class="sobre-text">
           <h2>Sobre mim</h2>
-          <p>Olá, eu sou a Paula.</p>
+          <p>Olá, eu sou a <strong>Paula</strong>.</p>
           <p>
-            Sou Psicóloga Clínica, Doula e Consultora em Amamentação. Em meu
-            consultório, atendo principalmente mulheres que vivenciam a
-            maternidade em suas diversas fases — da gestação ao parto, do
-            puerpério à criação dos filhos — com um olhar sensível, ético e
-            fundamentado na criação com apego e na abordagem teórico-prática do
-            Psicodrama e da Psicologia Perinatal. Além da clínica, conduzo
-            vivências e imersões que integram Psicologia e Arte, por meio do
-            Psicodrama e de trabalhos corporais que unem dança e teatro, criando
-            espaços de expressão, escuta e elaboração emocional a partir do
-            corpo e das relações.
+            Sou <strong>Psicóloga Clínica & Doula</strong>. Em meu consultório,
+            atendo principalmente mulheres que vivenciam a maternidade em suas
+            diversas fases — da gestação ao parto, do puerpério à criação dos
+            filhos — com um olhar sensível, ético e fundamentado na abordagem do
+            Psicodrama e da Psicologia Perinatal. Os atendimentos acontecem de
+            forma
+            <strong>on-line ou presencialmente em Bento Gonçalves</strong>.
           </p>
-          <p>Atendo de forma on-line e presencial em Bento Gonçalves.</p>
+          <p>
+            Além da clínica, conduzo <strong>vivências e imersões</strong> que
+            integram Psicologia e Arte, por meio do
+            <strong>Psicodrama</strong> e de trabalhos corporais que unem
+            <strong>dança e teatro</strong>, criando espaços de expressão,
+            escuta e elaboração emocional a partir do corpo e das relações.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
+    <<!-- SERVIÇOS -->
     <section id="servicos" class="servicos">
       <div class="container">
         <h2>Descubra como posso te ajudar</h2>
 
-        <div class="servico">
-          <div class="servico-header">
-            <h3>Psicoterapia Individual</h3>
-            <button class="toggle">+</button>
+        <div class="servicos-grid">
+          <div class="servico">
+            <div class="servico-header">
+              <h3>Psicoterapia Individual</h3>
+              <button class="toggle">+</button>
+            </div>
+
+            <div class="servico-content">
+              <div class="servico-body">
+                <div class="servico-img">
+                  <img
+                    src="imagens/Servico1.jpeg"
+                    alt="Psicoterapia Individual"
+                  />
+                </div>
+
+                <div class="servico-text">
+                  <p>
+                    A psicoterapia é um espaço de
+                    <strong
+                      >escuta, acolhimento e elaboração da própria
+                      história</strong
+                    >. Atendo principalmente <strong>mulheres</strong> que
+                    atravessam diferentes fases da vida — com atenção especial
+                    às experiências da <strong>maternidade</strong>. O processo
+                    terapêutico respeita a singularidade de cada pessoa, seus
+                    tempos, afetos e contextos, promovendo
+                    <strong>consciência</strong>,
+                    <strong>fortalecimento emocional</strong> e
+                    <strong>ampliação de escolhas</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="servico-content">
-            <p>
-              A psicoterapia é um espaço de escuta, acolhimento e elaboração da
-              própria história. Atendo principalmente mulheres que atravessam
-              diferentes fases da vida — com atenção especial às experiências da
-              maternidade. O processo terapêutico respeita a singularidade de
-              cada pessoa, seus tempos, afetos e contextos, promovendo
-              consciência, fortalecimento emocional e ampliação de escolhas.
+          <div class="servico">
+            <div class="servico-header">
+              <h3>Grupos Psicoterapêuticos</h3>
+              <button class="toggle">+</button>
+            </div>
+
+            <div class="servico-content">
+              <div class="servico-body">
+                <div class="servico-img">
+                  <img
+                    src="imagens/Servico3.jpeg"
+                    alt="Grupos Psicoterapêuticos"
+                  />
+                </div>
+
+                <div class="servico-text">
+                  <p>
+                    O grupo potencializa as <strong>trocas</strong>, o
+                    <strong>compartilhamento</strong> de
+                    <strong>experiências e o treino de novas respostas</strong>
+                    para situações individuais ou coletivas. Por meio da
+                    percepção de si e do grupo co-construímos um lugar seguro
+                    para o desenvolvimento de novas habilidades relacionais e
+                    emocionais. Nesse espaço o cuidado é coletivo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="servico">
+            <div class="servico-header">
+              <h3>Pré-natal Psicológico</h3>
+              <button class="toggle">+</button>
+            </div>
+
+            <div class="servico-content">
+              <div class="servico-body">
+                <div class="servico-img">
+                  <img
+                    src="imagens/Servico2.jpeg"
+                    alt="Pré-natal Psicológico"
+                  />
+                </div>
+
+                <div class="servico-text">
+                  <p>
+                    É um acompanhamento durante a gestação que cuida da
+                    <strong>saúde mental e emocional da gestante</strong>,
+                    oferecendo um espaço de elaboração das transformações desse
+                    período e prevenção de possíveis adoecimentos na gestação e
+                    no pós-parto. Busca fortalecer o vínculo com o bebê, a
+                    autonomia da mulher, escolhas conscientes e a vivência do
+                    parto e da maternidade com mais leveza.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="servico">
+            <div class="servico-header">
+              <h3>Acompanhamento como Doula</h3>
+              <button class="toggle">+</button>
+            </div>
+
+            <div class="servico-content">
+              <div class="servico-body">
+                <div class="servico-img">
+                  <img
+                    src="imagens/Servico4.jpeg"
+                    alt="Acompanhamento como Doula"
+                  />
+                </div>
+
+                <div class="servico-text">
+                  <p>
+                    Como doula ofereço
+                    <strong>apoio físico, emocional e psicológico</strong> a
+                    gestante/família antes, durante e depois do parto. O
+                    acompanhamento oferece um espaço de escuta, encorajamento,
+                    encontros recheados de informações baseadas em evidências
+                    científicas, uso de formas naturais para alívio de dor e
+                    presença contínua no dia do parto, além de um suporte
+                    emocional no puerpério. Atualmente atendo partos apenas na
+                    região da Serra Gaúcha/RS.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /servicos-grid -->
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <p>
+            Cada processo é único, construído de forma singular e honrando a
+            trajetória, os ritmos e as escolhas de cada pessoa.
+          </p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- MEUS PROJETOS -->
+    <section id="projetos" class="projetos">
+      <div class="container">
+        <header class="projetos-header">
+          <h2>Meus Projetos</h2>
+          <p>
+            Vivências e espaços de cuidado que integram psicologia, arte e
+            presença — com acolhimento, ética e profundidade.
+          </p>
+        </header>
+
+        <div class="projetos-grid">
+          <!-- AMARÉ -->
+          <article class="projeto-card">
+            <div class="projeto-topo">
+              <h3>AMARÉ</h3>
+              <span class="projeto-sub"
+                >Grupo Psicoterapêutico para mulheres</span
+              >
+            </div>
+
+            <div class="projeto-badges">
+              <span class="badge">Semanal</span>
+              <span class="badge">Online</span>
+              <span class="badge badge-ok">Vagas abertas</span>
+            </div>
+
+            <p class="projeto-texto">
+              A partir do desejo compartilhado de trabalhar com mulheres, nasceu
+              o <strong>AMARÉ</strong>, facilitado por mim e pela Psicóloga
+              <strong>Graziela Barth</strong>. Destinado a mulheres que desejam
+              desenvolver <strong>habilidades emocionais</strong> nas suas
+              relações, sua <strong>autoexpressão</strong>,
+              <strong>autocuidado</strong> e <strong>limites</strong> nos
+              relacionamentos.
             </p>
+
+            <div class="projeto-acoes">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/5554981125067?text=Ol%C3%A1!%20Tenho%20interesse%20em%20participar%20do%20Grupo%20AMAR%C3%89%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20por%20gentileza!%20"
+                target="_blank"
+                rel="noopener"
+              >
+                Quero participar do AMARÉ
+              </a>
+
+              <a
+                class="btn btn-outline"
+                href="https://ambarespacocolaborativo.my.canva.site/site-amare"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver página do AMARÉ
+              </a>
+            </div>
+          </article>
+
+          <!-- ÂMAGO -->
+          <article class="projeto-card">
+            <div class="projeto-topo">
+              <h3>Imersão Âmago</h3>
+              <span class="projeto-sub">Corpo • Movimento • Presença</span>
+            </div>
+
+            <div class="projeto-badges">
+              <span class="badge">Dança</span>
+              <span class="badge">Teatro</span>
+              <span class="badge">Psicologia</span>
+              <span class="badge badge-warn">Edição 2026</span>
+            </div>
+
+            <p class="projeto-texto">
+              A <strong>Imersão Âmago</strong> é um convite para se reencontrar
+              consigo mesmo(a) através do corpo, do movimento e da presença
+              plena. Um projeto que entrelaça <strong>dança</strong>,
+              <strong>teatro</strong> e <strong>psicologia</strong> por meio de
+              práticas corporais que buscam a sabedoria a partir da
+              sensibilidade — como forma de presença no mundo.
+            </p>
+
+            <div class="projeto-acoes">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/5554981125067?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Imers%C3%A3o%20%C3%82MAGO%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20por%20gentileza!"
+                target="_blank"
+                rel="noopener"
+              >
+                Conhecer a Imersão Âmago
+              </a>
+
+              <a
+                class="btn btn-outline"
+                href="https://ambarespacocolaborativo.my.canva.site/imersao-amago"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver página da Imersão
+              </a>
+            </div>
+
+            <small class="projeto-nota"
+              >Em breve, mais informações sobre a edição 2026.</small
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <header class="faq-header">
+          <h2>Dúvidas frequentes</h2>
+          <p>Se ainda ficar alguma pergunta, me chama no Whats 💬</p>
+        </header>
+
+        <div class="faq-list">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span
+                >Por quanto tempo devo ter acompanhamento psicoterápico?</span
+              >
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Cada pessoa tem seu ritmo. A terapia pode durar poucas sessões
+                ou seguir por mais tempo — tudo depende das suas necessidades. O
+                mais importante é que você se sinta à vontade para conversar
+                sobre isso a qualquer momento.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Qual o valor da sessão?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                De acordo com o
+                <strong
+                  >Art. 20 do Código de Ética Profissional do/a
+                  Psicólogo/a</strong
+                >, que orienta sobre a divulgação e promoção de serviços, o
+                valor da sessão não pode ser informado publicamente.
+              </p>
+
+              <p>
+                Para receber mais informações e agendar sua sessão, é só me
+                enviar uma mensagem. Os valores são apresentados de forma clara
+                antes do agendamento. <strong>Sem surpresas:</strong> a
+                transparência faz parte do cuidado e do processo terapêutico.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Você aceita plano de saúde?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Não, porém alguns planos de saúde possuem
+                <strong>reembolso</strong> para atendimento de psicoterapia. Se
+                você deseja fazer atendimento particular, entre em contato com o
+                seu convênio e entenda as políticas de reembolso específicas do
+                seu plano.
+              </p>
+
+              <p>Em alguns casos, o envio do recibo é suficiente.</p>
+            </div>
           </div>
         </div>
 
-        <div class="servico">
-          <div class="servico-header">
-            <h3>Grupos Psicoterapêuticos</h3>
-            <button class="toggle">+</button>
-          </div>
-
-          <div class="servico-content">
-            <p>
-              O grupo potencializa as trocas, o compartilhamento de experiências
-              e o treino de novas respostas para situações individuais ou
-              coletivas. A partir da co-construção de um lugar seguro e ético e
-              por meio da percepção de si e do outro, há a possibilidade de
-              desenvolvimento de novas habilidades relacionais e emocionais.
-              Nesse espaço o cuidado é coletivo.
-            </p>
-          </div>
-        </div>
-
-        <div class="servico">
-          <div class="servico-header">
-            <h3>Pré-natal Psicológico</h3>
-            <button class="toggle">+</button>
-          </div>
-
-          <div class="servico-content">
-            <p>
-              É um acompanhamento durante a gestação que cuida da saúde mental e
-              emocional da gestante, oferecendo um espaço de escuta,
-              acolhimento, elaboração das transformações desse período e
-              prevenção de possíveis adoecimentos na gestação e no pós-parto.
-              Busca fortalecer o vínculo com o bebê, a autonomia, as escolhas
-              conscientes e a vivência do parto e da maternidade com mais
-              segurança emocional.
-            </p>
-          </div>
-        </div>
-
-        <div class="servico">
-          <div class="servico-header">
-            <h3>Acompanhamento como Doula</h3>
-            <button class="toggle">+</button>
-          </div>
-
-          <div class="servico-content">
-            <p>
-              Como doula ofereço apoio físico, emocional e psicológico a
-              gestante/família antes, durante e depois do parto. O
-              acompanhamento oferece um espaço de escuta, encorajamento,
-              encontros recheados de informações baseadas em evidências
-              científicas, uso de formas naturais para alívio de dor e presença
-              contínua no dia do parto, além de um suporte emocional no
-              puerpério. Atualmente atendo partos apenas na região da Serra
-              Gaúcha/RS.
-            </p>
-          </div>
+        <div class="faq-cta">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5554981125067?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20atendimentos.%20"
+            target="_blank"
+            rel="noopener"
+          >
+            Tirar dúvida no WhatsApp
+          </a>
         </div>
       </div>
     </section>
@@ -182,10 +455,20 @@
           📞 (54) 98112-5067<br />
           ✉️ pauladallacosta21@hotmail.com
         </p>
+      </div>
+    </section>
 
-        <a href="https://wa.me/5554981125067" class="btn" target="_blank">
-          Falar pelo WhatsApp
-        </a>
+    <section class="reviews">
+      <div class="container">
+        <h2>Avaliações</h2>
+
+        <!-- widget -->
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div
+          class="elfsight-app-ee799816-b1bd-4967-84d5-0f568600e527"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </section>
 
@@ -219,10 +502,11 @@
         <p>
           Inquieta de pensamentos e regada de sonhos, sou mulher de sorriso
           largo, alma sensível e com um olhar questionador sobre a vida.
-          Acredito na potência dos afetos, do diálogo, das escolhas conscientes
-          e da vida vivida coletivamente. É a partir desses valores que sustento
-          meu trabalho e acompanho mulheres em seus processos de transformação e
-          renascimento.
+          <strong
+            >Acredito na potência dos afetos, do diálogo, das escolhas
+            conscientes e da vida vivida coletivamente. </strong
+          >É a partir desses valores que sustento meu trabalho e acompanho
+          mulheres em seus processos de transformação e renascimento.
         </p>
       </div>
     </footer>

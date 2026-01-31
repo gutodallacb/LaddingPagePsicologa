@@ -39,7 +39,7 @@ body {
 .header {
   background: var(--offwhite);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 24px 0;
+  padding: 1px 0;
 }
 
 .header-inner {
@@ -110,6 +110,7 @@ body {
   position: relative;
 }
 
+/* overlay da imagem */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -122,42 +123,117 @@ body {
   );
 }
 
+/* container texto */
 .hero-text {
   position: relative;
   text-align: center;
   color: #fff;
+  padding: 0 18px;
+  max-width: 900px;
 }
 
-.hero-text h1 {
+/* =====================
+   CABEÇALHO DO HERO
+===================== */
+.hero-header {
+  margin-bottom: 28px;
+}
+
+/* NOME */
+.hero-name {
   font-family: "Playfair Display", serif;
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px; /* cola no subtítulo */
 }
 
-.hero-text p {
-  font-size: 22px;
-}
-
-.hero-text span {
+/* SUBTÍTULO (CRP & Doula) */
+.hero-role {
   display: block;
-  margin-top: 30px;
+  margin-top: 0; /* garante que não afaste */
+  font-size: 16px;
+  font-weight: 400;
   font-style: italic;
+  opacity: 0.92;
 }
 
-/* ANIMAÇÃO HERO */
-.hero-text h1,
-.hero-text p,
-.hero-text span {
+/* =====================
+   TÍTULO CENTRAL
+===================== */
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+/* =====================
+   POEMA
+===================== */
+.hero-poem {
+  font-size: 22px;
+  line-height: 1.9;
+  margin: 0 auto;
+  max-width: 420px; /* faz ficar com “coluna” bonita no centro */
+}
+
+/* =====================
+   CTA FINAL
+===================== */
+.hero-cta {
+  display: inline-block;
+  margin-top: 28px;
+  font-style: italic;
+  font-size: 16px;
+  opacity: 0.92;
+  cursor: pointer;
+  position: relative;
+}
+
+/* underline fino */
+.hero-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* hover sutil */
+.hero-cta:hover {
+  opacity: 0.75;
+}
+
+/* =====================
+   ANIMAÇÃO HERO
+===================== */
+.hero-name,
+.hero-role,
+.hero-title,
+.hero-poem,
+.hero-cta {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 1s ease forwards;
 }
 
-.hero-text p {
-  animation-delay: 0.4s;
+.hero-role {
+  animation-delay: 0.15s;
 }
 
-.hero-text span {
+.hero-title {
+  animation-delay: 0.35s;
+}
+
+.hero-poem {
+  animation-delay: 0.55s;
+}
+
+.hero-cta {
   animation-delay: 0.8s;
 }
 
@@ -165,6 +241,36 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-name {
+    font-size: 34px;
+  }
+
+  .hero-role {
+    font-size: 13px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-poem {
+    font-size: 18px;
+    max-width: 320px;
+  }
+
+  .hero-cta {
+    font-size: 14px;
   }
 }
 
@@ -466,5 +572,627 @@ body {
     order: 2;
     max-width: 260px; /* controla tamanho da foto */
     margin: 0 auto; /* centraliza */
+  }
+}
+
+/* =====================
+   SERVIÇOS (IMAGEM AO EXPANDIR)
+===================== */
+
+.servico-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease;
+}
+
+.servico.active .servico-content {
+  max-height: 900px; /* maior por causa da imagem */
+  opacity: 1;
+}
+
+/* corpo expandido com grid */
+.servico-body {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* imagem */
+.servico-img {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(93, 100, 79, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.servico-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* texto */
+.servico-text p {
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* animação suave da imagem */
+.servico-img {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.5s ease;
+}
+
+.servico.active .servico-img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .servico-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* imagem ocupa mais espaço no card */
+  .servico-img {
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  .servico-img img {
+    height: 500px; /* antes: 320px */
+    object-fit: cover;
+    object-position: center 50%;
+  }
+
+  /* deixa texto mais colado e “natural” */
+  .servico-text p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* =====================
+   SERVIÇOS – DESKTOP (imagem direita + texto embaixo do título)
+===================== */
+@media (min-width: 769px) {
+  .servico-body {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 0.6fr 0.75fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* texto ocupa bem a largura e não vira parede */
+  .servico-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 500px; /* evita ficar largo demais */
+    margin: 0;
+  }
+
+  /* imagem na direita com altura boa */
+  .servico-img {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(93, 100, 79, 0.25);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  .servico-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+/* =====================
+   MEUS PROJETOS
+===================== */
+
+.projetos {
+  padding: 110px 0;
+  background: linear-gradient(180deg, #fff 0%, #f3ede9 100%);
+}
+
+.projetos-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.projetos-header h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--terracota);
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.projetos-header p {
+  font-size: 16px;
+  color: rgba(43, 43, 43, 0.85);
+  line-height: 1.8;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+/* Card */
+.projeto-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(93, 100, 79, 0.35);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.08);
+}
+
+.projeto-topo h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.projeto-sub {
+  display: block;
+  font-size: 14px;
+  color: rgba(43, 43, 43, 0.75);
+}
+
+/* Badges */
+.projeto-badges {
+  margin: 18px 0 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(93, 100, 79, 0.35);
+  color: rgba(43, 43, 43, 0.85);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.badge-ok {
+  border-color: rgba(137, 63, 10, 0.45);
+  color: var(--terracota);
+}
+
+.badge-warn {
+  border-color: rgba(43, 43, 43, 0.25);
+  color: rgba(43, 43, 43, 0.7);
+}
+
+/* Texto */
+.projeto-texto {
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(43, 43, 43, 0.9);
+  margin-bottom: 22px;
+}
+
+.projeto-texto strong {
+  font-weight: 600;
+  color: var(--terracota);
+}
+
+/* Ações */
+.projeto-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Botões premium (reaproveita seu .btn, mas melhora aqui) */
+.btn {
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--terracota);
+  color: #fff;
+  border: 1px solid var(--terracota);
+}
+
+.btn-outline {
+  background: transparent;
+  color: rgba(43, 43, 43, 0.95);
+  border: 1px solid rgba(93, 100, 79, 0.5);
+}
+
+.btn-outline:hover {
+  opacity: 0.85;
+}
+
+/* Nota */
+.projeto-nota {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: rgba(43, 43, 43, 0.7);
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 768px) {
+  .projetos {
+    padding: 80px 0;
+  }
+
+  .projetos-header h2 {
+    font-size: 30px;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projeto-card {
+    padding: 22px;
+  }
+}
+
+/* =====================
+   FAQ
+===================== */
+.faq {
+  padding: 110px 0;
+  background: #fff;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.faq-header h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--terracota);
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.faq-header p {
+  font-size: 16px;
+  color: rgba(43, 43, 43, 0.8);
+}
+
+.faq-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+/* Card FAQ */
+.faq-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(93, 100, 79, 0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.04);
+}
+
+/* Botão da pergunta */
+.faq-question {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 18px 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  color: rgba(43, 43, 43, 0.95);
+}
+
+/* ícone */
+.faq-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(93, 100, 79, 0.55);
+  color: rgba(43, 43, 43, 0.8);
+  flex-shrink: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Resposta */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.35s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(43, 43, 43, 0.88);
+}
+
+.faq-answer p:first-child {
+  padding-top: 2px;
+}
+
+.faq-answer strong {
+  font-weight: 600;
+  color: var(--terracota);
+}
+
+/* Aberto */
+.faq-item.active .faq-answer {
+  max-height: 600px;
+  opacity: 1;
+  padding-bottom: 18px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* vira um X elegante */
+}
+
+/* CTA */
+.faq-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .faq {
+    padding: 80px 0;
+  }
+
+  .faq-header h2 {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+  }
+}
+
+/* ===================== 
+   SERVIÇOS EM 2 POR LINHA (PC)
+===================== */
+
+/* mobile: 1 por linha */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* desktop: 2 por linha */
+@media (min-width: 769px) {
+  .servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+    align-items: start;
+  }
+
+  /* tira margin-bottom pq o gap já resolve */
+  .servico {
+    margin-bottom: 0 !important;
+  }
+
+  /* quando abrir, ocupa a linha inteira */
+}
+
+/* ===========================
+   SERVIÇO ABERTO (PC) COM IMAGEM FULL + TEXTO EM CIMA
+=========================== */
+@media (min-width: 769px) {
+  /* o body vira "palco" */
+  .servico.active .servico-body {
+    position: relative;
+    display: block; /* tira o grid */
+    min-height: 520px;
+  }
+
+  /* imagem ocupa o card todo */
+  .servico.active .servico-img {
+    position: absolute;
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .servico.active .servico-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* uma camada escura (ou clara) pra texto ficar legível */
+  .servico.active .servico-body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    border-radius: 16px;
+  }
+
+  /* texto por cima */
+  .servico.active .servico-text {
+    position: absolute;
+    z-index: 3;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+
+    padding: 18px 18px;
+    border-radius: 14px;
+
+    /* efeito vidro (bonito) */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .servico.active .servico-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 92%;
+  }
+
+  .servico.active .servico-text strong {
+    color: #fff;
+  }
+}
+
+/* =========================================
+   SERVIÇO ABERTO COM IMAGEM FULL + TEXTO OVERLAY (PC + MOBILE)
+========================================= */
+
+.servico.active .servico-body {
+  position: relative;
+  display: block; /* cancela grid quando abre */
+  min-height: 520px;
+}
+
+/* imagem ocupa o card todo */
+.servico.active .servico-img {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.servico.active .servico-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* camada para dar contraste */
+.servico.active .servico-body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+  border-radius: 16px;
+}
+
+/* texto por cima */
+.servico.active .servico-text {
+  position: absolute;
+  z-index: 3;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+
+  padding: 16px 16px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.servico.active .servico-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.servico.active .servico-text strong {
+  color: #fff;
+}
+
+/* altura menor no celular */
+@media (max-width: 768px) {
+  .servico.active .servico-body {
+    min-height: 560px;
+  }
+
+  .servico.active .servico-text p {
+    font-size: 13.5px;
+    line-height: 1.65;
   }
 }
